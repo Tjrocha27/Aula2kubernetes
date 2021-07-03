@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: firstpod
+  labels:
+    name: firstpod
+    app: firstpod
+spec:
+  containers:
+  - name: site
+    image: kubedevio/nginx-color:blue
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
